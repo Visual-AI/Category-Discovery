@@ -1,1 +1,1 @@
-# CategoryDiscovery-Survey
+# Category-Discovery
