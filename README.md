@@ -27,10 +27,11 @@ We will continue to maintain and update this repository with new papers and reso
 - [Category Discovery](#category-discovery)
     - [Novel Category Discovery](#novel-category-discovery-ncd)
     - [Generalized Category Discovery](#generalized-category-discovery-gcd)
-    - [Semantic Category Discovery](#semantic-category-discovery-scd)
     - [Continual Category Discovery](#continual-category-discovery-ccd)
+    - [On-the-fly Category Discovery](#on-the-fly-category-discovery-ocd)
     - [Category Discovery with domain shift](#category-discovery-with-domain-shift)
     - [Distribution-Agnostic Category Discovery](#distribution-agnostic-category-discovery-da-cd)
+    - [Semantic Category Discovery](#semantic-category-discovery-scd)
     - [Few-Shot Category Discovery](#few-shots-category-discovery-fs-cd)
     - [Federated Category Discovery](#federated-category-discovery-fcd)
 
@@ -236,8 +237,8 @@ FS-CD addresses the challenge of identifying novel classes when only a very limi
 
 FCD extends Category Discovery in a federated learning setting, facilitating decentralized and collaborative model training among clients while safeguarding data privacy.
 
-| Year   | Method                                                                 | Pub.     | Backbone        | Label Assignment         | # Unlabelled categories | Dataset                                       | $ \mathcal{Y_L} \cap \mathcal{Y_U} $ |
-|--------|------------------------------------------------------------------------|----------|-----------------|--------------------------|-------------------------|-----------------------------------------------|------------------------------------------|
-| 2023   | [FedoSSL](https://arxiv.org/abs/2305.00771)             | *ICML*   | ResNet       | Parametric Classifier     | Known                   | CIFAR-10/100, CINIC-10                        | $ \neq \varnothing $                  |
-| 2024   | [FedGCD](https://openaccess.thecvf.com/content/CVPR2024/papers/Pu_Federated_Generalized_Category_Discovery_CVPR_2024_paper.pdf)              | *CVPR*   | ViT        | GMM                      | Semi-FINCH              | CIFAR-10/100, ImageNet-100, CUB, SCars, Pets  | $ \neq \varnothing $                  |
-| Preprint| [GAL](https://arxiv.org/abs/2312.13500)                        | *ArXiv*  | ResNet\&34   | Parametric Classifier     | Potential Prototype Merge | CIFAR-100, TinyImageNet, ImageNet-100         | $ \varnothing $                       |
+| Year   | Method                                                                 | Pub.     | Backbone        | Label Assignment         | # Unlabelled categories | Dataset                                       | 
+|--------|------------------------------------------------------------------------|----------|-----------------|--------------------------|-------------------------|-----------------------------------------------|
+| 2023   | [FedoSSL](https://arxiv.org/abs/2305.00771)             | *ICML*   | ResNet       | Parametric Classifier     | Known                   | CIFAR-10/100, CINIC-10                        |
+| 2024   | [FedGCD](https://openaccess.thecvf.com/content/CVPR2024/papers/Pu_Federated_Generalized_Category_Discovery_CVPR_2024_paper.pdf)              | *CVPR*   | ViT        | GMM                      | Semi-FINCH              | CIFAR-10/100, ImageNet-100, CUB, SCars, Pets  |
+| Preprint| [GAL](https://arxiv.org/abs/2312.13500)                        | *ArXiv*  | ResNet\&34   | Parametric Classifier     | Potential Prototype Merge | CIFAR-100, TinyImageNet, ImageNet-100         |
