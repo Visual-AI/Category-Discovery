@@ -65,7 +65,8 @@ CD methods have also been explored in challenging settings, including few-shot l
 ### Novel Category Discovery (NCD)
 The concept of NCD aims to transfer the knowledge learned from base categories to cluster unlabelled unseen categories, motivated by the observation where a child could easily distinguish novel categories (e.g., birds and elephants) after learning to classify base categories (e.g., dogs and cats).
 
-Formally, given a dataset $\mathcal{D} = \mathcal{D}_L \cup \mathcal{D}_U$, where the labelled portion is $\mathcal{D}_L = \{(\mathbf{x}_i, y_i)\}_{i=1}^M \subset \mathcal{X} \times \mathcal{Y}_L$ and the unlabelled portion is $\mathcal{D}_U = \{(\mathbf{x}_i, \hat{y}_i)\}_{i=1}^K \subset \mathcal{X} \times \mathcal{Y}_U$ (with the labels $\hat{y}_i$ being inaccessible during training), the objective of NCD is to leverage the discriminative information learned from the annotated data to cluster the unlabelled data. 
+Formally, given a dataset $`\mathcal{D} = \mathcal{D}_L \cup \mathcal{D}_U`$, where the labelled portion is $`\mathcal{D}_L = \{(\mathbf{x}_i, y_i)\}_{i=1}^M \subset \mathcal{X} \times \mathcal{Y}_L`$
+and the unlabelled portion is $`\mathcal{D}_U = \{(\mathbf{x}_i, \hat{y}_i)\}_{i=1}^K \subset \mathcal{X} \times \mathcal{Y}_U`$ (with the labels $`\hat{y}_i`$ being inaccessible during training), the objective of NCD is to leverage the discriminative information learned from the annotated data to cluster the unlabelled data.
 
 This setting presumes that the label spaces of the labelled and unlabelled data are disjoint, i.e., $\mathcal{Y}_L \cap \mathcal{Y}_U = \varnothing$, implying $\mathcal{C}_N = \mathcal{Y}_U$, while also assuming a high degree of semantic similarity between the base and novel categories.
 
@@ -159,8 +160,12 @@ Notably, an equivalent formulation has been introduced by [Cao *etal.*](https://
 ### Continual Category Discovery (CCD)
 
 CCD provides a continual setting of category discovery in which new categories are identified sequentially while retaining previously acquired knowledge.
-CCD presents several distinct scenarios based on the structure of the incoming data. 
-In the **Class Incremental Scenario*, the training set $\mathcal{D}_{train}^t$ contains solely unlabelled instances from novel categories. In the *Mixed Incremental Scenario*, $\mathcal{D}_{train}^t$ is composed exclusively of unlabelled data drawn from both novel and base categories. Finally, in the *Semi-Supervised Mixed Incremental Scenario*, $\mathcal{D}_{train}^t$ comprises both labelled and unlabelled samples, which originate from the base as well as the novel categories.
+CCD presents several distinct scenarios based on the structure of the incoming data.
+
+In the **Class Incremental Scenario**, the training set $`\mathcal{D}_{\mathrm{train}}^t`$ contains solely unlabelled instances from novel categories.
+In the *Mixed Incremental Scenario*, $`\mathcal{D}_{\mathrm{train}}^t`$ is composed exclusively of unlabelled data drawn from both novel and base categories.
+Finally, in the *Semi-Supervised Mixed Incremental Scenario*, $`\mathcal{D}_{\mathrm{train}}^t`$ comprises both labelled and unlabelled samples, which originate from the base as well as the novel categories.
+
 
 | Year   | Method                                                                 | Pub.      | Backbone               | Scenario                | Label Assignment         | # Unlabelled categories | Dataset                                      |
 |--------|------------------------------------------------------------------------|-----------|------------------------|-------------------------|--------------------------|-------------------------|----------------------------------------------|
@@ -189,7 +194,8 @@ OCD extends conventional category discovery to an inductive learning paradigm wi
 
 ### Category Discovery with domain shift
 
-This setting relaxes the conventional assumption that both labelled and unlabelled data are drawn from the same semantic domain. Formally, let $\mathcal{D}_L$ denote the labelled data, assumed to be exclusively drawn from the domain $\Omega_ and let $\mathcal{D}_U$ denote the unlabelled data, which may include samples originating from both $\Omega_and an additional domain $\Omega_{N}$. The objective is to accurately classify images drawn from the combined domain $\Omega = \Omega_cup \Omega_{N}$, under the assumption that the novel domain is disjoint from the base domain (i.e., $\Omega_cap \Omega_{N} = \varnothing$). In practice, the novel domain $\Omega_{N}$ may encompass multiple subdomains.
+This setting relaxes the conventional assumption that both labelled and unlabelled data are drawn from the same semantic domain. Formally, let $`\mathcal{D}_L`$ denote the labelled data, assumed to be exclusively drawn from the domain $`\Omega_B`$, and let $`\mathcal{D}_U`$ denote the unlabelled data, which may include samples originating from both $`\Omega_B`$ and an additional domain $`\Omega_{N}`$. The objective is to accurately classify images drawn from the combined domain $`\Omega = \Omega_B \cup \Omega_{N}`$, under the assumption that the novel domain is disjoint from the base domain (i.e., $`\Omega_B \cap \Omega_{N} = \varnothing`$). In practice, the novel domain $`\Omega_{N}`$ may encompass multiple subdomains.
+
 
 | Year   | Method                                                                 | Pub.      | Backbone  | $ \Omega_{\mathcal{U}} $     | Label Assignment     | # Unlabelled categories | Dataset                                            | $ \mathcal{Y_L} \cap \mathcal{Y_U} $ |
 |--------|------------------------------------------------------------------------|-----------|-----------|--------------------------------|----------------------|-------------------------|----------------------------------------------------|------------------------------------------|
@@ -203,9 +209,8 @@ This setting relaxes the conventional assumption that both labelled and unlabell
 
 ### Distribution-Agnostic Category Discovery (DA-CD)
 
-DA-CD eliminates the requirement for a balanced distribution imposed on both labelled and unlabelled data in conventional category discovery. Instead, it acknowledges that the data may follow a skewed distribution, such that for certain categories $\mathcal{Y}_i$ and $\mathcal{Y}_j$ within the set $\mathcal{Y}$ it holds that
-$\mathbb{P}_{\mathcal{Y_x}}(\mathcal{Y}_i) > \mathbb{P}_{\mathcal{Y_x}}(\mathcal{Y}_j).$
-In this formulation, the set $\mathcal{Y_x}$ may refer to either the labelled categories $\mathcal{Y}_L$ or the unlabelled categories $\mathcal{Y}_U$.
+DA-CD eliminates the requirement for a balanced distribution imposed on both labelled and unlabelled data in conventional category discovery. Instead, it acknowledges that the data may follow a skewed distribution, such that for certain categories $`\mathcal{Y}_i`$ and $`\mathcal{Y}_j`$ within the set $`\mathcal{Y}`$ it holds that $`\mathbb{P}_{\mathcal{Y}_x}(\mathcal{Y}_i) > \mathbb{P}_{\mathcal{Y}_x}(\mathcal{Y}_j)`$. In this formulation, the set $`\mathcal{Y}_x`$ may refer to either the labelled categories $`\mathcal{Y}_L`$ or the unlabelled categories $`\mathcal{Y}_U`$.
+
 
 | Year   | Method                                                                 | Pub.     | Backbone        | Scenario                              | Label Assignment     | # Unlabelled categories | Dataset                                                |
 |--------|------------------------------------------------------------------------|----------|-----------------|---------------------------------------|----------------------|-------------------------|--------------------------------------------------------|
