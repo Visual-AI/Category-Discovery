@@ -65,9 +65,9 @@ CD methods have also been explored in challenging settings, including few-shot l
 ### Novel Category Discovery (NCD)
 The concept of NCD aims to transfer the knowledge learned from base categories to cluster unlabelled unseen categories, motivated by the observation where a child could easily distinguish novel categories (e.g., birds and elephants) after learning to classify base categories (e.g., dogs and cats).
 
-Formally, given a dataset $ \mathcal{D} = \mathcal{D}_L \cup \mathcal{D}_U $, where the labelled portion is $ \mathcal{D}_L = \{(\mathbf{x}_i, y_i)\}_{i=1}^M \subset \mathcal{X} \times \mathcal{Y}_L $ and the unlabelled portion is $ \mathcal{D}_U = \{(\mathbf{x}_i, \hat{y}_i)\}_{i=1}^K \subset \mathcal{X} \times \mathcal{Y}_U $ (with the labels $ \hat{y}_i $ being inaccessible during training), the objective of NCD is to leverage the discriminative information learned from the annotated data to cluster the unlabelled data. 
+Formally, given a dataset $\mathcal{D} = \mathcal{D}_L \cup \mathcal{D}_U$, where the labelled portion is $\mathcal{D}_L = \{(\mathbf{x}_i, y_i)\}_{i=1}^M \subset \mathcal{X} \times \mathcal{Y}_L$ and the unlabelled portion is $\mathcal{D}_U = \{(\mathbf{x}_i, \hat{y}_i)\}_{i=1}^K \subset \mathcal{X} \times \mathcal{Y}_U$ (with the labels $\hat{y}_i$ being inaccessible during training), the objective of NCD is to leverage the discriminative information learned from the annotated data to cluster the unlabelled data. 
 
-This setting presumes that the label spaces of the labelled and unlabelled data are disjoint, i.e., $ \mathcal{Y}_L \cap \mathcal{Y}_U = \varnothing $, implying $ \mathcal{C}_N = \mathcal{Y}_U $, while also assuming a high degree of semantic similarity between the base and novel categories.
+This setting presumes that the label spaces of the labelled and unlabelled data are disjoint, i.e., $\mathcal{Y}_L \cap \mathcal{Y}_U = \varnothing$, implying $\mathcal{C}_N = \mathcal{Y}_U$, while also assuming a high degree of semantic similarity between the base and novel categories.
 
 
 
@@ -101,7 +101,7 @@ This setting presumes that the label spaces of the labelled and unlabelled data 
 ### Generalized Category Discovery (GCD)
 
 Extending the NCD paradigm, Generalized Category Discovery relaxes the disjointness assumption between the base and novel categories, thereby presenting a more challenging and realistic scenario.
-In GCD, the labelled and unlabelled datasets may share common categories, i.e., $ \mathcal{Y}_L \cap \mathcal{Y}_U \neq \varnothing $, and the set of novel categories is defined as a subset of $\mathcal{Y}_U $ (i.e., $ \mathcal{C}_N \subset \mathcal{Y}_U $). This general formulation is particularly pertinent to practical applications such as plant species discovery, where an existing database of known species is augmented with newly observed species, necessitating the clustering of both known and novel instances.
+In GCD, the labelled and unlabelled datasets may share common categories, i.e., $\mathcal{Y}_L \cap \mathcal{Y}_U \neq \varnothing$, and the set of novel categories is defined as a subset of $\mathcal{Y}_U$ (i.e., $\mathcal{C}_N \subset \mathcal{Y}_U$). This general formulation is particularly pertinent to practical applications such as plant species discovery, where an existing database of known species is augmented with newly observed species, necessitating the clustering of both known and novel instances.
 
 Notably, an equivalent formulation has been introduced by [Cao *etal.*](https://arxiv.org/abs/2102.03526) under the designation of Open-World Semi-Supervised Learning. In the following context, we refer to both formulations under the umbrella term Generalized Category Discovery.
 
