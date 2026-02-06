@@ -246,3 +246,10 @@ FCD extends Category Discovery in a federated learning setting, facilitating dec
 | 2023   | [FedoSSL](https://arxiv.org/abs/2305.00771)             | *ICML*   | ResNet       | Parametric Classifier     | Known                   | CIFAR-10/100, CINIC-10                        |
 | 2024   | [FedGCD](https://openaccess.thecvf.com/content/CVPR2024/papers/Pu_Federated_Generalized_Category_Discovery_CVPR_2024_paper.pdf)              | *CVPR*   | ViT        | GMM                      | Semi-FINCH              | CIFAR-10/100, ImageNet-100, CUB, SCars, Pets  |
 | Preprint| [GAL](https://arxiv.org/abs/2312.13500)                        | *ArXiv*  | ResNet\&34   | Parametric Classifier     | Potential Prototype Merge | CIFAR-100, TinyImageNet, ImageNet-100         |
+
+
+
+## Related Repositories
+
+- [Visual-AI/Awesome-Category-Discovery](https://github.com/Visual-AI/Awesome-Category-Discovery) — An awesome-style paper list organized by year. Contributions are welcome—feel free to open issues or submit pull requests to add relevant works.
+- [Awesome-Novel-Class-Discovery](https://github.com/JosephKJ/Awesome-Novel-Class-Discovery) — We appreciate this excellent paper collection curated by Joseph, which complements our repo with additional coverage of novel/class discovery works and resources.
