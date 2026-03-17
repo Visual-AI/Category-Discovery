@@ -228,7 +228,7 @@ In contrast to NCD and GCD, which focus solely on grouping visually similar imag
 
 | Year  | Method                                                                 | Pub.      | Backbone            | Word Space                          | Label Assignment        | # Unlabelled categories | Dataset                                      |
 |-------|------------------------------------------------------------------------|-----------|---------------------|--------------------------------------|-------------------------|-------------------------|----------------------------------------------|
-| 2024  | [SCD](https://arxiv.org/abs/2304.02364)                                  | *CVPRW*  | ViT            | ~Open                           | KMeans+Top-$k$ Voting    | Known                   | ImageNet-100&1K, SCars, CUB                 |
+| 2024  | [SCD](https://arxiv.org/abs/2304.02364)                                  | *CVPRW*  | ViT            | ~Open                           | KMeans+Top-k Voting    | Known                   | ImageNet-100&1K, SCars, CUB                 |
 |       | [SNCD](https://ojs.aaai.org/index.php/AAAI/article/view/28371)                                     | *AAAI*   | ResNet           | Base + Novel Categories | Parametric Classifier    | Known                   | CIFAR-10&100, ImageNet-100                  |
 
 ### Few-Shots Category Discovery (FS-CD)
